@@ -1,0 +1,121 @@
+---
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+---
+
+<header class="header">
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <img src="/images/logo-white.svg" alt="MIRAIDOプロジェクト" />
+      </div>
+      <!-- end .logo -->
+      <ul>
+        {
+          isHome ? (
+            <>
+              <li><a href="#what">”MIRAIDO”って何？</a></li>
+              <li><a href="#works">プロジェクト</a></li>
+              <li><a href="#feature">大会概要</a></li>
+              <li><a href="#merit">”スポンサー0”募集</a></li>
+              <li><a href="#flow">参加方法</a></li>
+              <li><a href="#contact">お問合せ</a></li>
+            </>
+          ) : (
+            <>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#what">”MIRAIDO”って何？</a></li>
+                <li><a href="/#works">プロジェクト</a></li>
+                <li><a href="/#feature">大会概要</a></li>
+                <li><a href="/#merit">”スポンサー0”募集</a></li>
+                <li><a href="/#flow">参加方法</a></li>
+                <li><a href="/#contact">お問合せ</a></li>
+            </>
+          )
+        }
+      </ul>
+      <h1>
+        <div class="catch">こどもたちの<br />ミライのために</div>
+      </h1>
+    </nav>
+    {
+      isHome && (
+        <div class="first-view">
+          <div class="splide" role="group" aria-label="ズームしながらフェード">
+            <div class="splide__track">
+              <div class="splide__list">
+                <div class="splide__slide">
+                  <div class="thumb">
+                    <img
+                      src="/images/first-view-thumb01.jpg"
+                      alt="*"
+                      width="1400px"
+                      height="1000px"
+                    />
+                  </div>
+                  <!-- end .thumb  -->
+                </div>
+                <!-- end .splide__slide -->
+                <div class="splide__slide">
+                  <div class="thumb">
+                    <img
+                      src="/images/first-view-thumb02.jpg"
+                      alt="*"
+                      width="1400px"
+                      height="1000px"
+                    />
+                  </div>
+                  <!-- end .thumb  -->
+                </div>
+                <!-- end .splide__slide -->
+                <div class="splide__slide">
+                  <div class="thumb">
+                    <img
+                      src="/images/first-view-thumb03.jpg"
+                      alt="*"
+                      width="1400px"
+                      height="1000px"
+                    />
+                  </div>
+                  <!-- end .thumb  -->
+                </div>
+                <!-- end .splide__slide -->
+              </div>
+              <!-- end .splide__list-->
+            </div>
+            <!-- end .splide__track-->
+          </div>
+          <!-- end .splide -->
+          <div class="text">
+            <h2>
+              <div class="catch">
+                KODO to<br />MIRAIDO
+              </div>
+              <!-- end .catch -->
+            </h2>
+            <h1>
+              <div class="catch">〜Do or DoNot〜</div>
+            </h1>
+            <ul>
+              <li>こどもたちはミライです</li>
+              <li>私たちに何ができるでしょう？</li>
+              <li>一緒に考えませんか？未来の為に・・・</li>
+            </ul>
+            <div class="sentence">
+              <p>
+                この夏、【熊野MIRAIDO Vol 1.】として<br />
+                『WRO Japan 2025 公認　三重予選会』を開催します。
+              </p>
+            </div>
+          </div>
+          <!-- end .text -->
+        </div>
+      )
+    }
+  </div>
+  <!-- end .cotainer -->
+</header>
+<!-- end .header -->

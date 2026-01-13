@@ -1,0 +1,72 @@
+---
+interface Props {
+  isHome?: boolean;
+}
+
+const { isHome = false } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="top">
+      <div class="logo">
+        <img src="/images/logo.svg" alt="*" class="plane" />
+        <img src="/images/logo-white.svg" alt="*" class="white" />
+      </div>
+      <!-- end .logo -->
+      <nav>
+        <ul>
+          <li>
+            <a href={isHome ? "#page-top" : "/"}
+              ><p class="en">home</p>
+              <p class="jp"></p></a
+            >
+          </li>
+          <li>
+            <a href={isHome ? "#what" : "/#what"}
+              ><p class="en">MIRAIDOとは？</p>
+              <p class="jp"></p></a
+            >
+          </li>
+          <li>
+            <a href={isHome ? "#works" : "/#works"}
+              ><p class="en">projects</p>
+              <p class="jp"></p></a
+            >
+          </li>
+          <li>
+            <a href={isHome ? "#contact" : "/#contact"}
+              ><p class="en">contact</p>
+              <p class="jp"></p></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- end .top -->
+    {
+        isHome && (
+            <div class="privacy">
+                <p><a href="/privacy">PRIVACY POLICY</a></p>
+            </div>
+            <!-- end .top -->
+            <div class="privacy">
+                <p><a>WRO Japan 2025 公認 三重予選会事務局</a></p>
+                <p><a>〒633-0062 奈良県桜井市粟殿1029-6</a></p>
+                <p><a>TEL : 0744-48-3603 (担当：山崎)</a></p>
+            </div>
+        )
+    }
+    
+    <!-- end .privacy -->
+    <div class="copyright">
+      <small
+        >【MIRAIDO　PROJECT】<br class="sp-disblock" />©2025 360inc. All
+        rights reserved.</small
+      >
+    </div>
+    <!-- end .copyright -->
+  </div>
+  <!-- end .container -->
+</footer>
+<!-- end .footer -->
